@@ -40,6 +40,7 @@ class TCMD():
 			'/user': 		{'cmd': self.cmdUser},
 			'/tune':		{'cmd': self.cmdTune, 'param': True},
 			'/help':  		{'cmd': self.cmdHelp, 'bind_none': True}
+			'/printer_off':         {'cmd': self.cmdPrinter_off, 'bind_none': True}
 		}
 		
 
@@ -550,6 +551,9 @@ class TCMD():
 		                           "/tune - Set feed- and flowrate. Control temperatures.\n"
 		                           "/user - get user info.\n"
 		                           "/help - show this help message."),chatID=chat_id,markup="Markdown")
+############################################################################################
+	def cmdPrinter_off(self,chat_id,from_id,cmd,parameter):
+		self.main.send_msg(self.gEmo('info') + gettext("Ya solo falta que se apague la impresora"),chatID=chat_id,markup="Markdown")		
 ############################################################################################
 # FILE HELPERS
 ############################################################################################
